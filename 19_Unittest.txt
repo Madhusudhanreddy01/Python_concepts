@@ -1,0 +1,39 @@
+What is unittest in python
+
+unittest is a testing framework in Python that allows you to write and run unit tests for your Python code. 
+It is part of the Python standard library, so it is available with every Python installation.
+
+Unit testing is a software testing technique in which individual units or components of a software system 
+are tested in isolation to ensure that they function correctly. 
+In Python, a unit is typically a single function or method.
+
+unittest provides a set of tools for writing and running unit tests. 
+You can define test cases by subclassing the unittest.TestCase class and using its methods to test your code. 
+For example, you can use the assertEqual method to test that two values are equal, 
+the assertTrue method to test that a Boolean expression is true, and so on.
+
+Here is an example of a simple test case defined using unittest:
+
+css
+
+import unittest
+
+def add(a, b):
+    return a + b
+
+class TestAdd(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(0, 0), 0)
+        self.assertEqual(add(-1, 1), 0)
+
+if __name__ == '__main__':
+    unittest.main()
+
+In this example, the TestAdd class inherits from unittest.TestCase and defines a test_add method that tests the add function. 
+The if __name__ == '__main__': block at the end of the script runs the test case using the unittest.main() function.
+
+unittest provides many other tools for testing your code, including support for fixtures, test suites, and test runners. 
+By writing and running unit tests with unittest, you can ensure that your code works as expected and avoid introducing new bugs when making changes.
+
+
